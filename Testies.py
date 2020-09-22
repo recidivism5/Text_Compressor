@@ -1,10 +1,11 @@
 import numpy
+import io
 
 Dictionary = {
 
 }
 
-f = open("test.txt","r")
+f = open("poop.txt","r")
 
 for line in f:
     for c in line:
@@ -34,4 +35,25 @@ for element in range(len(frequencyArray)):
     print(frequencyArray[element])
 
 requiredCharacters = len(frequencyArray)
+print(requiredCharacters)
 
+def gp2(target):
+    i = 0
+    while i > -1:
+        if pow(2,i) > target:
+            break
+        else:
+            i += 1
+    return i
+
+longCharBitLength = gp2(requiredCharacters) + 1
+requiredCharacters -= pow(2,gp2(requiredCharacters))
+shortCharBitLength = gp2(requiredCharacters) + 1
+
+
+
+
+#longCharBitLength = 
+
+#for line in f:
+ #   for character in line:
