@@ -14,5 +14,24 @@ for line in f:
         else:
             Dictionary[c] = 1
 
-for index in Dictionary:
-    print(index,Dictionary[index])
+q = 0
+indexHolder = ""
+frequencyArray = []
+while Dictionary:
+    q = 0
+    for index in Dictionary:
+        print(index,Dictionary[index])
+        if Dictionary[index] > q:
+            q = Dictionary[index]
+            indexHolder = index
+    frequencyArray.append(indexHolder)
+    del Dictionary[indexHolder]
+    print("index",index)
+    print("indexHolder",indexHolder)
+
+print("characters in order of frequency:")
+for element in range(len(frequencyArray)):
+    print(frequencyArray[element])
+
+requiredCharacters = len(frequencyArray)
+
