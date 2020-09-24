@@ -110,6 +110,8 @@ def write_bitstream(fname, bits):
             # Write
             f.write(i.to_bytes(1, byteorder='big'))
 
+#Put the whole file into a readlines() array of strings, iterate through the characters of it and run it through the compression dictionary.
+#Write the resulting binary to an output file.
 wholeFileString = open('poop.txt', 'r').readlines()
 oString = ''
 for line in wholeFileString:
