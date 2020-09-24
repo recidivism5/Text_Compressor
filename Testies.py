@@ -110,12 +110,11 @@ def write_bitstream(fname, bits):
             # Write
             f.write(i.to_bytes(1, byteorder='big'))
 
-wholeFileString = open('poop.txt', 'r').read()
+wholeFileString = open('poop.txt', 'r').readlines()
 oString = ''
-for line in f:
+for line in wholeFileString:
     for character in line:
         oString = oString + Dictionary[character]
-        print(line,Dictionary[character])
 print(oString)
 write_bitstream('output.txt',oString)
 
