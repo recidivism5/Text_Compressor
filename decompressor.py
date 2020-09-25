@@ -1,3 +1,7 @@
+from io import StringIO
+
+wholeFileString = open('output.txt', 'rb').read()
+print(wholeFileString)
 
 import ast, json
 
