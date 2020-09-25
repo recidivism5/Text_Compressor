@@ -118,9 +118,13 @@ for line in wholeFileString:
     for character in line:
         oString = oString + Dictionary[character]
 #print(oString)
-#oString = oString + (zero * (8 - (len(oString) % 8)))                   #extra compression % if turned off ???
+oString = oString + (zero * (8 - (len(oString) % 8)))                   #extra compression % if turned off ???
 write_bitstream('output.txt',oString)
 print("len(oString): ",len(oString))
+print(oString)
+
+with open('testoutput.txt','wb') as f:
+    f.write(bytes(int(oString[i : i + 8], 2) for i in range(0, len(oString), 8)))
 
 
 import json
