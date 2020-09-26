@@ -86,3 +86,6 @@ def decompress(fS,dict):
 
 print(decompress(fileBinaryString,Dictionary))
 
+decompOutput = open('poopdecomp.txt','w')
+decompOutput.write(decompress(fileBinaryString,Dictionary))
+
