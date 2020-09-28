@@ -14,4 +14,4 @@ Usage:
 
 Bracketed arguments are location pointers, so you can do this, for example:
 
->python compressor.py C:\Users\ian\Documents\funnyDocument.txt C:\Users\ian\Documents\funnyDocumentCompressed.txt
+>> python compressor.py C:\Users\ian\Documents\funnyDocument.txt C:\Users\ian\Documents\funnyDocumentCompressed.txt
