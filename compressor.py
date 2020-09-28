@@ -123,7 +123,7 @@ for line in wholeFileString:
 #print(oString)
 oString = oString + (zero * (8 - (len(oString) % 8)))                   #extra compression % if turned off ???
 print("len(oString): ",len(oString))
-print(oString)
+#print(oString)
 
 with open(sys.argv[2],'wt') as f:
     for element in range(len(frequencyArray)):
