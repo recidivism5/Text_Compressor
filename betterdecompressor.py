@@ -9,7 +9,7 @@ argsList = sys.argv         # sys.argv[1] is the target compressed file
 #build frequencyArray from start of compressed file and set position to the starting bit index of the compressed portion of the file data:
 frequencyArray = []
 position = 1
-with open('testoutput.txt',errors='ignore') as f:
+with open(sys.argv[1],errors='ignore') as f:
     while 1:
         container = f.read(1)
         position += 1
@@ -65,12 +65,12 @@ for item in Dictionary:
 
 
 #Open file in read byte mode:
-File = open('testoutput.txt', 'rb').read()
+File = open(sys.argv[1], 'rb').read()
 fileBinaryString = ''
 
 #Fill fileBinaryString with file data:
 import os
-for index in range(os.stat('testoutput.txt').st_size):
+for index in range(os.stat(sys.argv[1]).st_size):
     fileBinaryString = fileBinaryString + zero * (8 - len(bin(File[index])[2:])) + bin(File[index])[2:]                         #fileBinaryString
 print(fileBinaryString)
 
@@ -86,7 +86,7 @@ def decompress(fS,dict):
 
     while 1:
 
-        if leftPointer + shortCharBitLength > len(fS):
+        if leftPointer + shortCharBitLength >= len(fS):
             break
 
         if fS[leftPointer] == '0':
@@ -94,7 +94,7 @@ def decompress(fS,dict):
             outputString = outputString + dict[fS[leftPointer:rightPointer]]
             leftPointer = rightPointer
 
-        if fS[leftPointer] == '1':
+        elif fS[leftPointer] == '1':
             rightPointer = leftPointer + longCharBitLength
             outputString = outputString + dict[fS[leftPointer:rightPointer]]
             leftPointer = rightPointer
@@ -102,7 +102,8 @@ def decompress(fS,dict):
 
     return outputString
 
-print(decompress(fileBinaryString,Dictionary))
+decomp = decompress(fileBinaryString,Dictionary)
+print(decomp)
 
-decompOutput = open('poopdecomp.txt','w')
-decompOutput.write(decompress(fileBinaryString,Dictionary))
+decompOutput = open(sys.argv[2],'w')
+decompOutput.write(decomp)
