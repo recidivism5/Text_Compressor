@@ -91,7 +91,7 @@ for item in Dictionary:
 
 
 
-#stack overflow bitwriter:
+#Bit Writer created by GitHub user gngdb https://gist.github.com/gngdb/3781ec8cba30769f881e9f9cbd54ed36
 from io import StringIO
 def write_bitstream(fname, bits):
     # bits are a string of ones and zeros, based on this
