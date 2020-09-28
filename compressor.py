@@ -137,7 +137,7 @@ with open(sys.argv[2],'ab') as f:
 import json
 dictString = json.dumps(Dictionary)
 f = open('dict.json','w')
-f.write(dictString)
+#f.write(dictString)
 
 
 
