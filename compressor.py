@@ -1,11 +1,14 @@
 import numpy
 import io
+import sys
+
+argsList = sys.argv         # sys.argv[1] is target compressed file. sys.argv[2] is compressed output file.
 
 Dictionary = {
 
 }
 
-f = open("poop.txt","r")
+f = open(sys.argv[1],errors='ignore')
 
 for line in f:
     for c in line:
@@ -28,6 +31,8 @@ while Dictionary:
     del Dictionary[indexHolder]
     print("index",index)
     print("indexHolder",indexHolder)
+
+
 
 print("characters in order of frequency:")
 for element in range(len(frequencyArray)):
@@ -67,8 +72,6 @@ one = '1'
 
 def DtB(n):  
     return bin(n).replace("0b", "")
-
-print(DtB(5))
   
 
 #Build compression dictionary:
@@ -112,18 +115,22 @@ def write_bitstream(fname, bits):
 
 #Put the whole file into a readlines() array of strings, iterate through the characters of it and run it through the compression dictionary.
 #Write the resulting binary to an output file.
-wholeFileString = open('poop.txt', 'r').readlines()
 oString = ''
+wholeFileString = open(sys.argv[1], errors='ignore').readlines()
 for line in wholeFileString:
     for character in line:
         oString = oString + Dictionary[character]
 #print(oString)
 oString = oString + (zero * (8 - (len(oString) % 8)))                   #extra compression % if turned off ???
-write_bitstream('output.txt',oString)
 print("len(oString): ",len(oString))
-print(oString)
+#print(oString)
 
-with open('testoutput.txt','wb') as f:
+with open(sys.argv[2],'wt') as f:
+    for element in range(len(frequencyArray)):
+        f.write(frequencyArray[element])
+    f.write('§')
+
+with open(sys.argv[2],'ab') as f:
     f.write(bytes(int(oString[i : i + 8], 2) for i in range(0, len(oString), 8)))
 
 
