@@ -29,6 +29,8 @@ while Dictionary:
     print("index",index)
     print("indexHolder",indexHolder)
 
+
+
 print("characters in order of frequency:")
 for element in range(len(frequencyArray)):
     print(frequencyArray[element])
@@ -67,8 +69,6 @@ one = '1'
 
 def DtB(n):  
     return bin(n).replace("0b", "")
-
-print(DtB(5))
   
 
 #Build compression dictionary:
@@ -112,8 +112,8 @@ def write_bitstream(fname, bits):
 
 #Put the whole file into a readlines() array of strings, iterate through the characters of it and run it through the compression dictionary.
 #Write the resulting binary to an output file.
-wholeFileString = open('poop.txt', 'r').readlines()
 oString = ''
+wholeFileString = open('poop.txt', 'r').readlines()
 for line in wholeFileString:
     for character in line:
         oString = oString + Dictionary[character]
@@ -123,7 +123,12 @@ write_bitstream('output.txt',oString)
 print("len(oString): ",len(oString))
 print(oString)
 
-with open('testoutput.txt','wb') as f:
+with open('testoutput.txt','wt') as f:
+    for element in range(len(frequencyArray)):
+        f.write(frequencyArray[element])
+    f.write('§')
+
+with open('testoutput.txt','ab') as f:
     f.write(bytes(int(oString[i : i + 8], 2) for i in range(0, len(oString), 8)))
 
 

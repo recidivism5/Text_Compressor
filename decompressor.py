@@ -16,7 +16,7 @@ with open('dict.json', 'r') as f:
 
 originalDictionary = json.loads(data)
 
-#finds short and long character lengths:
+#find short and long character lengths:
 holder = 0
 happened = False
 lShortChar = 0
@@ -32,7 +32,7 @@ for item in originalDictionary:
         happened = True
 
 
-#reverses dictionary:
+#reverse dictionary:
 Dictionary = dict(map(reversed, originalDictionary.items()))
 
 
