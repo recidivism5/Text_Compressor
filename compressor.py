@@ -134,9 +134,9 @@ with open(sys.argv[2],'ab') as f:
     f.write(bytes(int(oString[i : i + 8], 2) for i in range(0, len(oString), 8)))
 
 
-import json
-dictString = json.dumps(Dictionary)
-f = open('dict.json','w')
+#import json
+#dictString = json.dumps(Dictionary)
+#f = open('dict.json','w')
 #f.write(dictString)
 
 
