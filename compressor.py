@@ -91,7 +91,7 @@ for item in Dictionary:
 
 
 
-#stolen stackoverflow code:
+#stack overflow bitwriter:
 from io import StringIO
 def write_bitstream(fname, bits):
     # bits are a string of ones and zeros, based on this
