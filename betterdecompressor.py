@@ -8,7 +8,7 @@ argsList = sys.argv         # sys.argv[1] is the target compressed file
 
 #build frequencyArray from start of compressed file and set position to the starting bit index of the compressed portion of the file data:
 frequencyArray = []
-position = -1
+position = 1
 with open('testoutput.txt',errors='ignore') as f:
     while 1:
         container = f.read(1)
