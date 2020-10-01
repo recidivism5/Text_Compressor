@@ -10,3 +10,8 @@ Usage:
 >python compressor.py [target file name] [output file name]        #Outputs a compressed version of the target file
 
 >python decompressor.py [target file name] [output file name]      #Outputs a decompressed version of the target file
+
+
+Bracketed arguments can be location pointers, so you can do this, for example:
+
+python compressor.py C:\Users\ian\Documents\funnyDocument.txt C:\Users\ian\Documents\funnyDocumentCompressed.txt
