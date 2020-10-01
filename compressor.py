@@ -89,30 +89,6 @@ for item in Dictionary:
     print(item,Dictionary[item])
 
 
-
-
-#Bit Writer created by GitHub user gngdb https://gist.github.com/gngdb/3781ec8cba30769f881e9f9cbd54ed36
-from io import StringIO
-def write_bitstream(fname, bits):
-    # bits are a string of ones and zeros, based on this
-    # stackoverflow answer: https://stackoverflow.com/a/16888829/6938913
-    # was broken due to utf-8 encoding using up to 4 bytes: https://stackoverflow.com/a/33349765/6937913
-    sio = StringIO(bits)
-    with open(fname, 'wb') as f:
-        while 1:
-            # Grab the next 8 bits
-            b = sio.read(8)
-            # Bail if we hit EOF
-            if not b:
-                break
-            # If we got fewer than 8 bits, pad with zeroes on the right
-            if len(b) < 8:
-                b = b + '0' * (8 - len(b))
-            # Convert to int
-            i = int(b, 2)
-            # Write
-            f.write(i.to_bytes(1, byteorder='big'))
-
 #Put the whole file into a readlines() array of strings, iterate through the characters of it and run it through the compression dictionary.
 #Write the resulting binary to an output file.
 oString = ''
