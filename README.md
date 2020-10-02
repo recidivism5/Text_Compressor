@@ -15,3 +15,8 @@ Usage:
 Bracketed arguments can be location pointers, so you can do this, for example:
 
 python compressor.py C:\Users\ian\Documents\funnyDocument.txt C:\Users\ian\Documents\funnyDocumentCompressed.txt
+
+
+To compress a file and output the dictionary used to compress that file, give the name of the file you want to contain that dictionary as a third argument in command prompt:
+
+>python compressor.py [target file name] [output file name] [dictionary file name]

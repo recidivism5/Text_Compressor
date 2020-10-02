@@ -88,6 +88,15 @@ for index in range(len(frequencyArray)):
 for item in Dictionary:
     print(item,Dictionary[item])
 
+if len(sys.argv) > 3:
+    with open(sys.argv[3],'wt') as f:
+        for item in Dictionary:
+            f.write(item)
+            f.write('   ')
+            f.write(Dictionary[item])
+            f.write('\n')
+        f.close
+
 
 #Put the whole file into a readlines() array of strings, iterate through the characters of it and run it through the compression dictionary.
 #Write the resulting binary to an output file.
