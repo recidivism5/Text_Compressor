@@ -12,9 +12,9 @@ Usage:
 >python decompressor.py [target file name] [output file name]      #Outputs a decompressed version of the target file
 
 
-Bracketed arguments can be location pointers, so you can do this, for example:
+Bracketed arguments can be paths, so you can do this, for example:
 
-python compressor.py C:\Users\ian\Documents\funnyDocument.txt C:\Users\ian\Documents\funnyDocumentCompressed.txt
+>python compressor.py C:\Users\ian\Documents\funnyDocument.txt C:\Users\ian\Documents\funnyDocumentCompressed.txt
 
 
 To compress a file and output the dictionary used to compress that file, give the name of the file you want to contain that dictionary as a third argument in command prompt:
